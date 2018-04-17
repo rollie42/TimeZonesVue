@@ -1,0 +1,24 @@
+<template>
+    <div class="tz-modal" v-if="visible">
+        <div class="tz-modal-content-wrapper">
+            <div class="tz-modal-content">
+                <h3>Register</h3>
+                <div>
+                    <label>Name</label>
+                    <input v-model="name" />
+                </div>
+                <div>
+                    <label>Password</label>
+                    <input type="password" v-model="password" />
+                </div>
+                <div>
+                    <button v-on:click="register()">Register</button>
+                    <button v-on:click="cancel()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>    
+</template>
+
+<style src="./registerdialog.css" />
+<script src="./registerdialog.ts"></script>

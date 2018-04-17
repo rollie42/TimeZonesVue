@@ -1,0 +1,26 @@
+<template>
+    <div>
+        <h1>Users</h1>
+
+        <table v-if="users.length" class="table">
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Role</th>
+                    <th><span class="glyphicon glyphicon-trash"></span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="user in users">
+                    <td>{{ user.name}}</td>
+                    <td :contenteditable="canEdit(user)" @blur="updateRole(user, $event.target)">{{ user.role }}</td>
+                    <td><span class="glyphicon glyphicon-remove" v-if="canEdit(user)" @click="deleteUser(user)"></span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p v-else><em>Loading...</em></p>
+    </div>
+</template>
+
+<script src="./users.ts"></script>

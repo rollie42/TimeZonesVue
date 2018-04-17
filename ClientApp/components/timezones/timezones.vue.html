@@ -1,0 +1,39 @@
+<template>
+    <div>
+        <h1>
+            Timezones
+            <a v-if="loginInfo.id != ''" v-on:click="newTimeZone()"><span class="glyphicon glyphicon-plus-sign"></span></a>
+        </h1>
+        <input placeholder="Filter" v-model="filterText"/>
+
+        <table v-if="!loading" class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Owner</th>
+                    <th>Offset</th>
+                    <th>Current Time</th>
+                    <th><span class="glyphicon glyphicon-trash"></span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="timezone in filteredTimeZones">
+                    <td :contenteditable="canEdit(timezone)" @blur="updateName(timezone, $event.target)">{{ timezone.name }}</td>
+                    <td :contenteditable="canEdit(timezone)" @blur="updateCity(timezone, $event.target)">{{ timezone.city }}</td>
+                    <td>{{ timezone.owner }}</td>
+                    <td :contenteditable="canEdit(timezone)" @blur="updateGmtOffset(timezone, $event.target)">{{ timezone.gmtOffset }}</td>
+                    <td>{{ currentTime(timezone) }}</td>
+                    <td>
+                        <span class="glyphicon glyphicon-remove" v-if="loginInfo.role == 'Admin' || timezone.ownerId == loginInfo.id" @click="deleteTimeZone(timezone)"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p v-else><em>Loading...</em></p>
+        <new-time-zone-dialog-component ref="newTimeZoneDialog" :loginInfo="loginInfo" :timezones="timezones"/>
+    </div>
+</template>
+
+<script src="./timezones.ts"></script>

@@ -1,0 +1,25 @@
+<template>
+    <div>
+        <h1>Welcome to TimeZone Express!</h1>
+        <p>This app is designed to fill a hole in current technology offerings, by allowing users to enter their <em>own</em> timezones, and even see timeszones created by others! The possibilities for advancing the WWW are pretty much endless, with this technology now available.</p>
+        <p>To help you get started, a number of users have been created to allow for testing the site. These users cannot be modified!</p>
+
+        <ul>
+            <li>Tywin (pass: Lion1) - <em>Admin</em></li>
+            <li>Ed (pass: DireWolf5) - <em>Admin</em></li>
+            <li>Robb (pass cooincidentally also: DireWolf5) - <em>Manager</em></li>
+            <li>Joffrey (pass: Jerk): <em>User</em></li>
+            <li>Arya (pass: Needle): <em>User</em></li>
+        </ul>
+        <p>Feel free to create your own users and play around as well :)</p>
+        <p>Some notes about this app's behavior:</p>
+        <ul>
+            <li>Anyone can view all timezones. Any logged in user may manage their own or create new ones. An <em>Admin</em> may manage all users' timezones.</li>
+            <li>The <strong>Users</strong> page is only available to <em>Admins</em> and <em>Managers</em>. From here, users can be deleted.</li>
+            <li>There are various requirements for names, passwords, etc.</li>
+            <li>Everything is API based, so any functionality you see on the site can be done with a console app.</li>
+            <li>Login state uses JWT in lieu of cookies.</li>
+            <li>App secrets are <em>not</em> checked in - you will need to supply them yourself, and do any necessary migrations for local builds.</li>
+        </ul>
+    </div>
+</template>

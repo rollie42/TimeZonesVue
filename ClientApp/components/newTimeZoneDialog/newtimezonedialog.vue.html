@@ -1,0 +1,27 @@
+<template>
+    <div class="tz-modal" v-if="visible">
+        <div class="tz-modal-content-wrapper">
+            <div class="tz-modal-content">
+                <div>
+                    <label>Name</label>
+                    <input v-model="name" />
+                </div>
+                <div>
+                    <label>City</label>
+                    <input v-model="city" />
+                </div>
+                <div>
+                    <label>GMT Offset</label>
+                    <input v-model="gmtOffset" />
+                </div>
+                <div>
+                    <button v-on:click="create()">Create</button>
+                    <button v-on:click="cancel()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<style src="./newtimezonedialog.css" />
+<script src="./newtimezonedialog.ts"></script>

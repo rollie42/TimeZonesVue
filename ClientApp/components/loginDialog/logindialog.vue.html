@@ -1,0 +1,24 @@
+<template>
+    <div class="tz-modal" v-if="visible">
+        <div class="tz-modal-content-wrapper">
+            <div class="tz-modal-content">
+                <h3>Login</h3>
+                <div>
+                    <label>Name</label>
+                    <input v-model="name" />
+                </div>
+                <div>
+                    <label>Password</label>
+                    <input type="password" v-model="password" />
+                </div>
+                <div>
+                    <button v-on:click="login()">Login</button>
+                    <button v-on:click="cancel()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>    
+</template>
+
+<style src="./logindialog.css" />
+<script src="./logindialog.ts"></script>
