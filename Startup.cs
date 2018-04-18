@@ -32,7 +32,6 @@ namespace TimeZonesVue
             services.AddMvc();
             services.AddDbContext<ApplicationDbContext>(/*options => options.UseSqlServer(Configuration["ConnectionString"])*/);
 
-
             services.AddIdentity<IdentityUser, IdentityRole>( options =>
             {
                 options.Password.RequireDigit = false;

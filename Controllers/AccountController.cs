@@ -214,7 +214,6 @@ namespace TimeZonesVue
 
                     if (result.Succeeded)
                     {
-                        // TODO: is ID generated in some way...? do we need to do that here...?
                         await _userManager.AddClaimAsync(user, new Claim("Role", defaultUser.Role));
                     }
                 }

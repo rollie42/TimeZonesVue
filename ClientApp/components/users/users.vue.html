@@ -1,20 +1,21 @@
 <template>
     <div>
         <h1>Users</h1>
+        <p><em>Remember you can't modify predefined users!</em></p>
 
         <table v-if="users.length" class="table">
             <thead>
                 <tr>
                     <th>User</th>
                     <th>Role</th>
-                    <th><span class="glyphicon glyphicon-trash"></span></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr v-for="user in users">
                     <td>{{ user.name}}</td>
                     <td :contenteditable="canEdit(user)" @blur="updateRole(user, $event.target)">{{ user.role }}</td>
-                    <td><span class="glyphicon glyphicon-remove" v-if="canEdit(user)" @click="deleteUser(user)"></span></td>
+                    <td><span class="btn glyphicon glyphicon-trash" v-if="canEdit(user)" @click="deleteUser(user)"></span></td>
                 </tr>
             </tbody>
         </table>

@@ -1,15 +1,15 @@
 <template>
     <div class="login-panel">
         <div v-if="loggedin" class="table">
-            <span>{{ userName }}</span>
-            <button @click="logout()">Log out</button>
+            <label>{{ userName }}</label>
+            <button  class="btn btn-danger" @click="logout()">Log out</button>
             </div>
         <div v-else>
-            <button @click="showLoginDialog()">Log in</button>
-            <button @click="showRegisterDialog()" >Register</button>
+            <button class="btn btn-success" @click="showLoginDialog()">Log in</button>
+            <button class="btn btn-primary" @click="showRegisterDialog()" >Register</button>
         </div>
 </div>
 </template>
 
-<style src="./loginpanel.css" />
+<style src="./loginpanel.css"></style>
 <script src="./loginpanel.ts"></script>

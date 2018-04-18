@@ -2,9 +2,9 @@
     <div>
         <h1>
             Timezones
-            <a v-if="loginInfo.id != ''" v-on:click="newTimeZone()"><span class="glyphicon glyphicon-plus-sign"></span></a>
+            <button v-if="loginInfo.id != ''" v-on:click="newTimeZone()" class="btn btn-lg btn-link"><span class="glyphicon glyphicon-plus-sign"></span></button>            
         </h1>
-        <input placeholder="Filter" v-model="filterText"/>
+        <input class="form-control" placeholder="Filter" v-model="filterText"/>
 
         <table v-if="!loading" class="table">
             <thead>
@@ -14,7 +14,7 @@
                     <th>Owner</th>
                     <th>Offset</th>
                     <th>Current Time</th>
-                    <th><span class="glyphicon glyphicon-trash"></span></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -25,7 +25,7 @@
                     <td :contenteditable="canEdit(timezone)" @blur="updateGmtOffset(timezone, $event.target)">{{ timezone.gmtOffset }}</td>
                     <td>{{ currentTime(timezone) }}</td>
                     <td>
-                        <span class="glyphicon glyphicon-remove" v-if="loginInfo.role == 'Admin' || timezone.ownerId == loginInfo.id" @click="deleteTimeZone(timezone)"></span>
+                        <span class="btn glyphicon glyphicon-trash" v-if="loginInfo.role == 'Admin' || timezone.ownerId == loginInfo.id" @click="deleteTimeZone(timezone)"></span>
                     </td>
                 </tr>
             </tbody>

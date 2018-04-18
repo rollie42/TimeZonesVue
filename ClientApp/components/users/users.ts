@@ -29,15 +29,14 @@ export default class FetchDataComponent extends Vue {
                 return response.json() as Promise<User[]>
             })
             .then(data => {
-                console.log(data)
                 this.users = data
             });
     }
 
     updateRole(user: User, target: any) {
         var txt = target.textContent
-        var valid = txt != "Admin" && txt != "Manager" && txt != "User"
-        if (!valid || (txt == "Admin" && this.loginInfo.role != "Admin")) {
+        var valid = txt == "Admin" || txt == "Manager" || txt == "User"
+        if (!valid || (txt == "Admin" && this.loginInfo.role != "Admin")) {            
             target.textContent = user.role
             return
         }

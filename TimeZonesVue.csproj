@@ -17,8 +17,6 @@
   <ItemGroup>
     <None Remove="ClientApp\boot.ts" />
     <None Remove="ClientApp\components\app\app.ts" />
-    <None Remove="ClientApp\components\counter\counter.ts" />
-    <None Remove="ClientApp\components\fetchdata\fetchdata.ts" />
     <None Remove="ClientApp\components\loginDialog\logindialog.ts" />
     <None Remove="ClientApp\components\loginPanel\loginpanel.ts" />
     <None Remove="ClientApp\components\navmenu\navmenu.ts" />
@@ -45,8 +43,6 @@
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\boot.ts" />
     <TypeScriptCompile Include="ClientApp\components\app\app.ts" />
-    <TypeScriptCompile Include="ClientApp\components\counter\counter.ts" />
-    <TypeScriptCompile Include="ClientApp\components\fetchdata\fetchdata.ts" />
     <TypeScriptCompile Include="ClientApp\components\loginDialog\logindialog.ts" />
     <TypeScriptCompile Include="ClientApp\components\loginPanel\loginpanel.ts" />
     <TypeScriptCompile Include="ClientApp\components\navmenu\navmenu.ts" />

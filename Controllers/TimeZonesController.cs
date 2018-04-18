@@ -69,7 +69,7 @@ namespace TimeZonesVue.Controllers
                 record.City = timeZone.City;
                 record.GmtOffset = timeZone.GmtOffset;
                 dbContext.SaveChanges();
-                return Ok(timeZone);
+                return Ok(record);
             }
 
             return BadRequest();

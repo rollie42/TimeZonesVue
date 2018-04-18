@@ -24,7 +24,6 @@ export default class TimeZoneComponent extends Vue {
     filterText: string
 
     mounted() {
-        console.log(JSON.stringify(this.loginInfo))
         fetch('api/timezones')
             .then(response => {
                 if (!response.ok) {
@@ -36,7 +35,6 @@ export default class TimeZoneComponent extends Vue {
             .then(data => {
                 this.timezones = data;
                 this.loading = false;
-                //this.$forceUpdate();
             });
     }
 
@@ -109,7 +107,6 @@ export default class TimeZoneComponent extends Vue {
     }
 
     updateGmtOffset(timezone: any, target: any) {
-        console.log(target.textContent)
         var offset: number = Number(target.textContent)
         if (isNaN(offset)) {
             target.textContent = timezone.gmtOffset

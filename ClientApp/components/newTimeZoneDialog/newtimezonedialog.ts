@@ -15,7 +15,6 @@ export default class NewTimeZoneDialogComponent extends Vue {
     timezones: TimeZone[]
 
     create() {
-        console.log(JSON.stringify(this.loginInfo))
         //var self = this
         var tz: TimeZone = { id: "", name: this.name, city: this.city, owner: this.loginInfo.name, ownerId: this.loginInfo.id, gmtOffset: this.gmtOffset }
 
@@ -36,11 +35,13 @@ export default class NewTimeZoneDialogComponent extends Vue {
                     throw new Error()
                 }
 
-                return response.text() as Promise<string>
+                return response.json() as Promise<TimeZone>
             })
             .then(data => {
+                console.log(tz)
+                console.log(data)
                 this.visible = false
-                this.timezones.push(tz)
+                this.timezones.push(data)
             });
     }
 

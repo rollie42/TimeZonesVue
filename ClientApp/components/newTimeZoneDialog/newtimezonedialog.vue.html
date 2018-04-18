@@ -2,26 +2,29 @@
     <div class="tz-modal" v-if="visible">
         <div class="tz-modal-content-wrapper">
             <div class="tz-modal-content">
-                <div>
+                <div class="form-group">
                     <label>Name</label>
-                    <input v-model="name" />
+                    <input class="form-control" v-model="name" autofocus />
                 </div>
-                <div>
+                <div class="form-group">
                     <label>City</label>
-                    <input v-model="city" />
+                    <input class="form-control" v-model="city" />
                 </div>
-                <div>
+                <div class="form-group">
                     <label>GMT Offset</label>
-                    <input v-model="gmtOffset" />
+                    <input class="form-control" v-model="gmtOffset" />
                 </div>
-                <div>
-                    <button v-on:click="create()">Create</button>
-                    <button v-on:click="cancel()">Cancel</button>
+                <br/>
+                <div class="form-group">
+                    <button class="form-control btn btn-success" v-on:click="create()">Create</button>
+                </div>
+                <div class="form-group">
+                    <button class="form-control btn btn-default" v-on:click="cancel()">Cancel</button>
                 </div>
             </div>
         </div>
     </div>
 </template>
 
-<style src="./newtimezonedialog.css" />
+<style src="../../css/dialog.css"></style>
 <script src="./newtimezonedialog.ts"></script>

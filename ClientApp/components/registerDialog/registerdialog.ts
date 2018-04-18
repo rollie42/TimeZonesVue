@@ -30,7 +30,6 @@ export default class RegisterDialogComponent extends Vue {
             })
             .then(data => {
                 var jwtData: any = jwtDecode(data)
-                console.log('response = ' + JSON.stringify(jwtData))
                 this.loginInfo.name = jwtData.sub
                 this.loginInfo.role = jwtData.Role
                 this.loginInfo.id = jwtData.UserId
